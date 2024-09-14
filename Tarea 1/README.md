@@ -2,6 +2,7 @@
 
 Como se menciona en la actividad, para poder observar los resultados de esta misma basta con hacer lo siguiente:
 - Dirigirse a la rama `tarea1` y a la carpeta del mismo nombre
+- Ejecute el comando `npm i`
 - Ejecutar el comando `npm start` desde ahí
 - Entrar en el navegador a la ruta `localhot:3000` o `localhost:3000/usuarios`
 
