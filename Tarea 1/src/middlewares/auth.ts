@@ -1,13 +1,16 @@
 import { Request, Response, NextFunction } from "express";
+import { User } from "../types/user";
 
-
-const secretKey = '12345'
-
-export function authMiddleware(req: Request, res: Response, next: NextFunction) {
-    const key = req.query.key;
-    if(key === secretKey){
-        return next();  
-    }
-    
-    res.sendStatus(401);
+const onlyUser: User = {
+    name: "Juana",
+    rol: "admin"
 }
+
+export function roles(allowedRoles: string[]) {
+    return (req: Request, res: Response, next: NextFunction) => {
+        if(allowedRoles.includes(onlyUser.rol))
+            return next();  
+        res.sendStatus(403);
+    }
+}
+

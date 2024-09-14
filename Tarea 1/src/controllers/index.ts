@@ -1,5 +1,5 @@
-import usersController from "./users.controllers";
+import usuariosController from "./usuarios.controllers";
 
 export default {
-    usersController
+    usuariosController
 }

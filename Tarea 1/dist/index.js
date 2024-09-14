@@ -8,9 +8,9 @@ const routes_1 = __importDefault(require("./routes"));
 const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 app.get('', (req, res) => {
-    res.send('Api Works!');
+    res.send('Todo bien!');
 });
 app.use(routes_1.default);
 app.listen(port, () => {
-    console.log(`App is running in port ${port}`);
+    console.log(`Puerto ${port}`);
 });

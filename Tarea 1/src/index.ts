@@ -5,13 +5,13 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.get('', (req, res) => {
-    res.send('Api Works!')
+    res.send('Todo bien!')
 })
 
 app.use(routes);
 
 app.listen(port, () => {
-    console.log(`App is running in port ${port}`)
+    console.log(`Puerto ${port}`)
 })
 
 
