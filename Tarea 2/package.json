@@ -1,7 +1,7 @@
 {
   "name": "tarea-2",
   "version": "1.0.0",
-  "description": "Como se menciona en la actividad, para poder observar los resultados de esta misma basta con hacer lo siguiente:\r - Dirigirse a la rama `tarea1` y a la carpeta del mismo nombre\r - Ejecute el comando `npm i`\r - Ejecutar el comando `npm start` desde ahí\r - Entrar en el navegador a la ruta `localhot:3000` o `localhost:3000/usuarios`",
+  "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "node .",
