@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import user from '../models/user';
 import bcrypt from 'bcrypt';
-
+import jwt from 'jsonwebtoken';
 
 class RegisterController { 
     emptyPage(req: Request, res: Response){
@@ -9,19 +9,20 @@ class RegisterController {
     }
 
     async createUser(req: Request, res: Response){
-        let password = req.actualUser.password;
         const username = req.actualUser.name;
-
-        password = await bcrypt.hash(password, 10);
+        const password = await bcrypt.hash(req.actualUser.password, 10);
 
         const newUser = new user ({
             name: username,
             password: password
         });
+        req.actualUser = newUser;
 
         try{
             const saved = await newUser.save();
-            res.send(req.actualUser);
+            const data = req.actualUser;
+            const token = jwt.sign({data}, process.env.SECRET_KEY as string, { expiresIn: '1h'});
+            res.status(200).json(token);
         } catch {
             res.status(500);
         }

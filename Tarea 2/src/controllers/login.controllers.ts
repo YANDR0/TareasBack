@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import jwt from 'jsonwebtoken';
+
 
 class LoginController {
     emptyPage(req: Request, res: Response){
@@ -6,9 +8,12 @@ class LoginController {
     }
 
     success(req: Request, res: Response){
-        res.send(req.actualUser);
+      const data = req.actualUser
+        const token = jwt.sign({data}, process.env.SECRET_KEY as string, { expiresIn: '1h'});
+        res.status(200).json(token);
     }
 }
 
 const loginController = new LoginController();
 export default loginController;
+
