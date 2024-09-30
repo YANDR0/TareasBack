@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from "express";
-import User from '../models/user';
+import user from '../models/user';
+import { User } from "../types/user";
 
 
 export  function findUser(wanted: boolean){
     return async (req: Request, res: Response, next: NextFunction) => {
         
-        const user = req.query.name
-        console.log(req.query.password)
-
+        const username = req.query.name.toString();
+        
         try {
-            const results = await User.find({name: user});
+            const results = await user.find({name: username});
             if(wanted && !(results.length > 0)) return res.sendStatus(404);
             else if(!wanted && results.length > 0) return res.sendStatus(400);
-            //req.user = results[0]
+
             next();
 
         } catch(e) {
