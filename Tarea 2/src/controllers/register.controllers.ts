@@ -9,8 +9,8 @@ class RegisterController {
     }
 
     async createUser(req: Request, res: Response){
-        let password = req.query.password.toString();
-        const username = req.query.name.toString();
+        let password = req.actualUser.password;
+        const username = req.actualUser.name;
 
         password = await bcrypt.hash(password, 10);
 
@@ -21,7 +21,7 @@ class RegisterController {
 
         try{
             const saved = await newUser.save();
-            res.send("Creado con exito");
+            res.send(req.actualUser);
         } catch {
             res.status(500);
         }

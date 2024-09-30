@@ -10,14 +10,9 @@ export  function checkPassword(newUser: boolean){
         if(newUser) return next();
         
         password = password.toString();
-        console.log(password)
-        const user = req.query.name.toString();
 
         try {
-            const results = await User.find({name: user});
-            if(!(results.length > 0)) return res.sendStatus(404);
-            
-            const pass = results[0].password;
+            const pass = req.actualUser.password;
             const comparation = await bcrypt.compare(password, pass)
 
             if(comparation) return next();      

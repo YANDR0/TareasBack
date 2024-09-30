@@ -6,7 +6,7 @@ class LoginController {
     }
 
     success(req: Request, res: Response){
-        res.send('Sesión exitosa');
+        res.send(req.actualUser);
     }
 }
 
