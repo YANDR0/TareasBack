@@ -5,3 +5,4 @@
 
 Links a los Pull Request de las distintas tareas realizadas:
 - Tarea1: https://github.com/YANDR0/TareasBack/pull/1
+- Tarea2: https://github.com/YANDR0/TareasBack/pull/2
