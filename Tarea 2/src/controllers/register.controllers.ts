@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import user from '../models/user';
+import bcrypt from 'bcrypt';
 
 
 class RegisterController { 
@@ -8,8 +9,10 @@ class RegisterController {
     }
 
     async createUser(req: Request, res: Response){
-        const password = req.query.password.toString();
+        let password = req.query.password.toString();
         const username = req.query.name.toString();
+
+        password = await bcrypt.hash(password, 10);
 
         const newUser = new user ({
             name: username,
