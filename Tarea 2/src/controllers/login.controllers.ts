@@ -7,5 +7,4 @@ class LoginController {
 }
 
 const loginController = new LoginController();
-
 export default loginController;

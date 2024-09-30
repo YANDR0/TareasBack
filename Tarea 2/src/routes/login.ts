@@ -1,26 +1,14 @@
 import { Router } from "express";
 import Controller from "../controllers/index"
+import { findUser } from "../middlewares/findUser";
+import { checkPassword } from "../middlewares/auth";
+
 
 const LoginController = Controller.loginController;
 const router = Router();
 
 router.get('', LoginController.emptyPage);
-
-
+router.get('/data', findUser(true), checkPassword('11111', 'abcd'), LoginController.emptyPage);
 
 
 export default router;
-
-
-/*
-import { Router } from "express";
-import { roles } from "../middlewares/auth";
-import UsersController from "../controllers/users.controllers";
-
-
-const router = Router();
-
-router.get('', roles(['admin', 'gerente']), UsersController.listAll);
-
-export default router;
-*/
