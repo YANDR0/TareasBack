@@ -1,5 +1,9 @@
-import usuariosController from "./usuarios.controllers";
+import registerController from "./register.controllers";
+import loginController from "./login.controllers";
 
-export default {
-    usuariosController
-}
+const controllers = {
+    registerController, 
+    loginController
+};
+
+export default controllers;
