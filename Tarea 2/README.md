@@ -9,6 +9,7 @@ Para poder ejecutar el proyecto se debe realizar lo siguiente:
 
 Además, agregue al `.env` esto:
 DB_URL = mongodb+srv://yaelalexrb:1234567890@cluster0.1vcot.mongodb.net/Tarea
+SECRET_KEY = 123456
 
 
 
