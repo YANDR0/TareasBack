@@ -1,8 +1,9 @@
 import { Router } from "express";
-import express from "express";
-import path from "path";
+import Controller from "../controllers/index"
 
+const DownloadsController = Controller.downloadsController;
 const router = Router();
+
 
 router.get('', (req, res) => {
     res.send('Ruta downloads')

@@ -1,5 +1,8 @@
 import { Router } from "express";
 import upload from "../middlewares/typeVerication";
+import Controller from "../controllers/index"
+
+const UploadsController = Controller.uploadsController;
 
 const router = Router();
 
