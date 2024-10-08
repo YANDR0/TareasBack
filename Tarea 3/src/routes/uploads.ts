@@ -7,7 +7,7 @@ router.get('', (req, res) => {
     res.send('Ruta uploads')
 })
 
-router.post('/upload', upload.single('file'), (req, res) => {
+router.post('', upload.single('file'), (req, res) => {
     console.log('Archivo: ', req.file)
     if (req.file){
         res.send('Se subio el archivo')
@@ -16,7 +16,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
     }
 })
 
-router.post('/upload', upload.array('file'), (req, res) => {
+router.post('', upload.array('file'), (req, res) => {
     console.log('Archivo: ', req.file)
     if (req.files && req.files.length){
         res.send('Se subieron los archivos')
