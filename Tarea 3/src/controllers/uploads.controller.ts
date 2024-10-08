@@ -3,16 +3,27 @@ import { Request, Response } from "express";
 
 class UploadsController {
 
-    /*
     emptyPage(req: Request, res: Response){
-        res.send('Para iniciar sesión, ingrese sus datos en la ruta: http://localhost:3000/login/data?name=<nombre>&password=<contraseña>');
+        res.send('Ruta uploads');
     }
 
-    success(req: Request, res: Response){
-      const data = req.actualUser
-        const token = jwt.sign({data}, process.env.SECRET_KEY as string, { expiresIn: '1h'});
-        res.status(200).json(token);
-    }*/
+    successOne(req: Request, res: Response){
+        console.log('Archivo: ', req.file)
+        if (req.file){
+            res.send('Se subio el archivo')
+        } else {
+            res.status(400).send('No se mandó')
+        }
+    }
+
+    successMultiple(req: Request, res: Response){
+        console.log('Archivo: ', req.file)
+        if (req.files && req.files.length){
+            res.send('Se subieron los archivos')
+        } else {
+            res.status(400).send('No se mandaron')
+        }
+    }
 }
 
 const uploadsController = new UploadsController();
