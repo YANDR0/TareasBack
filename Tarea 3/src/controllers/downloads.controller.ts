@@ -1,15 +1,20 @@
 import { Request, Response } from "express";
+import express from "express";
+import path from "path";
+var fs = require('fs');
 
 
 class DownloadsController {
 
-    emptyPage(req: Request, res: Response){
-        res.send('Ruta downloads');
-    }
-
-
     success(req: Request, res: Response){
-        res.send('El otro');
+        let file = req.body;
+        try{
+            var data = fs.readFileSync(path.join(__dirname, '..', '..', 'docs', file));
+            res.contentType("application/pdf");
+            res.send(data);
+        } catch {
+            res.sendStatus(404);
+        }
     }
 }
 
