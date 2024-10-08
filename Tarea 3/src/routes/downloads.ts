@@ -5,7 +5,7 @@ import path from "path";
 const router = Router();
 
 router.get('', (req, res) => {
-    res.send('Waaaa')
+    res.send('Ruta downloads')
 })
 
 //router.get('', express.static(path.join(__dirname, '..', 'docs')));

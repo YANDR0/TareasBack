@@ -3,6 +3,9 @@ import upload from "../middlewares/typeVerication";
 
 const router = Router();
 
+router.get('', (req, res) => {
+    res.send('Ruta uploads')
+})
 
 router.post('/upload', upload.single('file'), (req, res) => {
     console.log('Archivo: ', req.file)
