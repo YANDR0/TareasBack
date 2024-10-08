@@ -3,7 +3,7 @@ import { Request } from "express";
 
 const storage = diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'docs');
+        cb(null, 'documents');
     },
     filename: (req, file, cb) => {
         const ext = file.originalname.split('.').pop()?.toLowerCase();
