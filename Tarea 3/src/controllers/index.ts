@@ -2,7 +2,7 @@ import downloadsController from "./downloads.controller";
 import uploadsController from "./uploads.controller";
 
 const controllers = {
-    downloadController,
+    downloadsController,
     uploadsController
 };
 
