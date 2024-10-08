@@ -13,7 +13,7 @@ const storage = diskStorage({
 });
 
 const fileFilter = (req: Request, file: Express.Multer.File, cb: FileFilterCallback) => {
-    const flag = file.originalname.split('.').pop()?.toLowerCase() != '.pdf';
+    const flag = file.originalname.split('.').pop()?.toLowerCase() == 'pdf';
     cb(null, flag);
 };
 

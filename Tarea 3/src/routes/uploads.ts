@@ -1,8 +1,9 @@
 import { Router } from "express";
+import upload from "../middlewares/typeVerication";
 
 const router = Router();
 
-/*
+
 router.post('/upload', upload.single('file'), (req, res) => {
     console.log('Archivo: ', req.file)
     if (req.file){
@@ -20,7 +21,6 @@ router.post('/upload', upload.array('file'), (req, res) => {
         res.status(400).send('No se mandó nada')
     }
 })
-*/
 
 
 export default router;
