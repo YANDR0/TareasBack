@@ -1,8 +1,11 @@
-# Buenas, este es el repositorio de tareas de:
+# Tarea 3
 
-#### Yael Alejandro Rodríguez Barreto
-### Expediente: 739286, creo
+Para poder ejecutar el proyecto se debe realizar lo siguiente:
+- Dirigirse a la rama `tarea3` y a la carpeta del mismo nombre
+- Ejecute el comando `npm i`
+- Ejecutar el comando `npm run scripts` para generar dist
+- Ejecutar el comando `npm start` desde ahí
 
-Links a los Pull Request de las distintas tareas realizadas:
-- Tarea1: https://github.com/YANDR0/TareasBack/pull/1
-- Tarea2: https://github.com/YANDR0/TareasBack/pull/2
+Una vez hecho esto puede proceder a hacer estas cosas
+- Dirigirse a la ruta `http://localhost:3000/downloads` y añadir como query param el nombre del pdf que desee mostrar mediante el parámetro `?file=<Nombre del archivo>`
+- Generar un post mediante una herramienta como postman a la ruta `http://localhost:3000/uploads`
